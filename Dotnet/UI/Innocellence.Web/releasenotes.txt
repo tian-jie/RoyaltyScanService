@@ -1,0 +1,76 @@
+﻿<H3>Version: 2.6.SnowWhite</H3>
+Release Date: 2016-05-13
+Change List:
+
+<H3>Version: 2.5.SnowWhite</H3>
+Release Date: 2016-05-05
+Change List:
+
+<H3>Version: 2.4.ChatGroup</H3>
+Release Date: 2016-05-03
+Change List:
+Version: 2.4.ChatGroup
+　　IT Helpdesk 后台迁移到微信管理平台中
+　　以ChatGroup分支为基准
+　　FaqInfo 公共化
+　　FeedBack 优化
+　　【图文】菜单权限tag中支持部门信息
+　　【ACC加油站】微信菜单配权限
+　　【AccessDashboard】医保搜索app(CA)
+　　【发消息】检查消息发送的人的逻辑（增加了检查按钮，可以检查人和部门是否在可见范围内，不检查标签）
+　　HR在线提问 - 每个问题加一个是否满意的调查链接，收集反馈信息
+
+<H3>Version: 2.3</H3>
+Release Date: 2016-03-31
+Change List:
+Version: 2.3
+　　管理平台功能发布
+　　地址簿、标签管理功能正式上线
+　　用户权限确认
+　　BioMed ACC加油站 – 用户反馈
+　　图文编辑/发消息模块支持动态配置
+　　图文编辑允许插入Audio
+　　图文编辑插入Video时允许修改封面
+　　左侧导航菜单焦点BUG修复
+　　将LED报表接入到企业号管理平台中
+　　管理员管理的微信菜单图文，独立到管理员界面中
+
+<H3>Version: 2.2</H3>
+Release Date: 2016-03-02
+Change List:
+　　#15002: 
+　　#15620: 活动功能
+　　#15414: BioMed ACC加油站
+
+<H3>Version: 2.1.20160226</H3>
+Release Date: 2016-02-26
+Change List:
+　　#14863: HR Flex Benefit年度账单
+　　#14949: 【图文编辑】【发消息】外链无法统计阅读量
+　　#15414: BioMed ACC加油站
+　　Note: 1.fixed some bug. scope: [event]
+　　　　2.封装微信图片预览代码--imgpreview.js
+
+<H3>Version: 2.1.20160201</H3>
+Release Date: 2016-02-01
+Change List:
+　　#13633	销售支持 - 常见问题，需要设置权限为仅销售可见
+　　#13630	清理及规范日志和exception
+　　#13526	SPP - 现在无权限的提示修改
+　　#13480	部分app中内容移交到admin中管理
+　　#13479	app管理 - 菜单功能配置
+　　#13478	app管理 - 菜单管理，和Category同步
+　　#13477	app管理 - 基本信息管理
+　　#13474	地址簿管理 - 员工的批量导入
+　　#13473	地址簿管理 - 员工的增删改（单人），包括关联部门
+　　#13472	地址簿管理 - 部门管理，增删改
+　　#13403	批量推送的图文，在菜单中点出来后顺序不一致，需要保留一致的顺序。
+　　#13402	固定连接网页（wxlink）无法点图片显示大图
+　　#13401	HR修改菜单key的处理规则，默认为图文推送。
+　　#13400	SPP修改关注欢迎语
+　　#13399	HR Communication修改free text的自动回复
+　　#13398	HR Communication中FAQ搜索结果界面按照提供的ppt样式进行修改，删除第三页（详细页）。
+　　#13397	HR Communication中在线服务界面按照提供的ppt样式进行修改
+　　#12870	图文编辑中，用户需要1大N小同时发送。
+
+	   

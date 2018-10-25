@@ -1,0 +1,3065 @@
+﻿#template {
+    display: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    font-family: Microsoft YaHei, Arial, Lucida, Verdana, Hiragino Sans GB, STHeiti, WenQuanYi Micro Hei, SimSun, sans-serif;
+}
+
+input {
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    -moz-user-select: text;
+}
+
+textarea {
+    -webkit-text-size-adjust: none;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    -moz-user-select: text;
+    resize: none;
+}
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol, li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: none;
+}
+
+input {
+    border: none;
+}
+
+input, button, select, textarea, a, a:focus {
+    outline: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+.not-visible {
+    visibility: hidden !important;
+}
+
+.top {
+    z-index: 99 !important;
+}
+
+.edit-page-left {
+    position: absolute;
+    left: 0;
+    width: 133px;
+    top: 0;
+    bottom: 0;
+    min-height: 675px;
+    background-color: #282828;
+}
+
+.edit-page-icon {
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") no-repeat;
+    background-size: 600px 600px;
+}
+
+.loading .loading-icon {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-position: 0 -300px;
+    margin-top: -19px;
+    margin-left: -19px;
+    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -ms-animation: spin 1s linear infinite;
+}
+
+/*对于非chrome内核的浏览器显示换浏览器的提示*/
+.not-support-page {
+    position: absolute;
+    z-index: 999999;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #282828;
+}
+
+.not-support-page .not-support-page-word {
+    margin: 70px auto;
+    display: block;
+}
+
+/*左侧上半部分*/
+.edit-page-left-top {
+    height: 92px;
+}
+
+.edit-page-back-to-list {
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    background-position: 0 0;
+    cursor: pointer;
+    margin: 30px 0 0 22px;
+    float: left;
+
+}
+
+.thumbnail-page-list {
+    position: absolute;
+    width: 133px;
+    top: 92px;
+    bottom: 0;
+    overflow-y: auto;
+}
+
+.thumbnail-page-list::-webkit-scrollbar {
+    background-color: #282828;
+    width: 4px;
+}
+
+.thumbnail-page-list::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #000;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .5), inset -2px 2px 2px rgba(204, 204, 204, 0.1), inset 2px -2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail-page-list .page.animation-prepare {
+    -webkit-transform: scale(0.275);
+    -moz-transform: scale(0.275);
+    -ms-transform: scale(0.275);
+    transform: scale(0.275);
+    margin-left: -116px;
+    margin-top: -183px;
+}
+
+/*ie6不支持对非a标签hover的支持，但是本应用不需要ie6做兼容*/
+.edit-page-back-to-list:hover {
+    background-position: -40px 0;
+}
+
+.edit-page-theme-thumbnail {
+    height: 44px;
+    width: 44px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 24px 0 0 8px;
+    float: left;
+}
+
+.edit-page-theme-thumbnail img {
+    height: 100%;
+}
+
+/*右侧缩略图*/
+
+.thumbnail-page-list li {
+    width: 88px;
+    height: 138px;
+    border: 2px solid #282828;
+    margin-bottom: 12px;
+    margin-left: 20px;
+    overflow: hidden;
+    position: relative;
+    cursor: wait;
+}
+
+.thumbnail-page-list li.select {
+    border-color: #0dd4ff;
+}
+
+.page .not-surppot-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+}
+
+.thumbnail-page-list li.select .thumbnail-page-list-item-num {
+    background-position: -80px 0;
+}
+
+.thumbnail-page-list-item-num {
+    width: 24px;
+    height: 23px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-position: -110px 0;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    z-index: 2;
+}
+
+.thumbnail-page-list-item-num span {
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    max-width: 15px;
+    -webkit-transform: translate3d(-80%, 0, 0);
+    -ms-transform: translate3d(-80%, 0, 0);
+    -moz-transform: translate3d(-80%, 0, 0);
+}
+
+.thumbnail-page-list .page-list.select .delete-btn {
+    height: 26px;
+    width: 26px;
+    background-position: -110px -90px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+/*右边的手机部分*/
+.edit-page-right {
+    position: absolute;
+    left: 133px;
+    height: 100%;
+    right: 0;
+    min-width: 892px;
+}
+
+.edit-page-phone {
+    width: 371px;
+    height: 675px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-phone.png") no-repeat;
+    background-size: 371px 675px;
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    margin-top: -337px;
+    z-index: 100; /*手机的z-index需要大一些，因为有些页面是从它下面滑动出来的*/
+}
+
+.edit-page-phone-content-border {
+    width: 320px;
+    height: 536px;
+    position: absolute;
+    top: 8.74%;
+    left: 50%;
+    margin-left: -160px;
+    background-color: #0f0e14;
+}
+
+.edit-page-edit-bgimg-btn {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background-position: 0 -250px;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    z-index: 20;
+}
+
+.edit-page-theme-title {
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: white;
+    background-color: #1b1c20;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.edit-page-phone-screen {
+    height: 504px;
+    overflow: hidden;
+    position: relative;
+}
+
+.edit-page-screen-message-box {
+    width: 100%;
+    line-height: 30px;
+    background: gainsboro;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #333;
+    font-weight: bold;
+    z-index: 1000;
+    -webkit-transform: translate3d(0, -100%, 0);
+    -webkit-transition: 0.3s ease-out;
+}
+
+.edit-page-screen-message-box.show {
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transition: 0.3s ease-out;
+}
+
+/*手机屏幕中的虚拟层*/
+.virtual-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.virtual-layer-editable-obj {
+    border: 1px dashed white;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    cursor: pointer;
+}
+
+.virtual-layer-editable-drag-obj {
+    width: 100%;
+    height: 100%;
+}
+
+.virtual-layer-editable-obj.select {
+    border: 1px dashed #0dd4ff;
+}
+
+.scale-rotate-basic-point {
+    display: none;
+}
+
+.select .scale-rotate-basic-point {
+    display: block;
+    position: absolute;
+    top: -23px;
+    left: 50%;
+    margin-left: -6px;
+    cursor: url(//static01.cloud7.com.cn/assets/1c623e5b/Content/image/scale-rotate-basic-cursor.ico), default;
+}
+
+.scale-basic-point {
+    display: none;
+}
+
+.select .scale-basic-point {
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    cursor: se-resize;
+}
+
+.edit-page-phone-screen img.temp {
+    height: 100%;
+}
+
+.edit-page-preview {
+    height: 38px;
+    width: 38px;
+    background-color: #0dd4ff;
+    border-radius: 38px;
+    position: absolute;
+    left: 50%;
+    margin-left: -19px;
+    bottom: 32px;
+    background-position: -175px 0;
+    -webkit-box-shadow: 1px 1px rgba(6, 0, 1, .16);
+    -moz-box-shadow: 1px 1px rgba(6, 0, 1, .16);
+    box-shadow: 1px 1px rgba(6, 0, 1, .16);
+    cursor: pointer;
+}
+
+.edit-page-preview:hover {
+    width: 78px;
+    background-position: -225px 0;
+    -webkit-transition: width .3s ease-out;
+    -moz-transition: width .3s ease-out;
+    -ms-transition: width .3s ease-out;
+}
+
+/*添加頁面按鈕*/
+.edit-page-add-page-btn {
+    width: 57px;
+    height: 57px;
+    position: absolute;
+    top: 50%;
+    left: 373px;
+    margin-top: -237px;
+    background-position: -341px 0;
+    border-bottom-right-radius: 57px;
+    border-top-right-radius: 57px;
+    cursor: pointer;
+}
+
+.edit-page-add-page-btn:hover {
+    width: 128px;
+    background-position: -430px 0;
+    -webkit-transition: width .3s ease-out;
+    -moz-transition: width .3s ease-out;
+    -ms-transition: width .3s ease-out;
+}
+
+/*添加组件按钮*/
+.edit-page-add-module-btn {
+    width: 57px;
+    height: 57px;
+    position: absolute;
+    top: 50%;
+    left: 373px;
+    margin-top: -172px;
+    background-position: -340px -75px;
+    border-bottom-right-radius: 57px;
+    border-top-right-radius: 57px;
+    cursor: pointer;
+}
+
+.edit-page-add-module-btn:hover {
+    width: 128px;
+    background-position: -429px -75px;
+    -webkit-transition: width .3s ease-out;
+    -moz-transition: width .3s ease-out;
+    -ms-transition: width .3s ease-out;
+}
+
+/*下一页按钮*/
+.edit-page-pre-page-btn {
+    position: absolute;
+    top: 50%;
+    margin-top: 40px;
+    left: 373px;
+    width: 43px;
+    height: 99px;
+    background-position: -1px -50px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.edit-page-pre-page-btn:hover {
+    opacity: 0.7;
+}
+
+.edit-page-next-page-btn {
+    position: absolute;
+    top: 50%;
+    margin-top: 150px;
+    left: 373px;
+    width: 43px;
+    height: 99px;
+    background-position: -50px -50px;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.edit-page-next-page-btn:hover {
+    opacity: 0.7;
+}
+
+/*设置按钮*/
+.edit-page-theme-setting-btn {
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border-radius: 48px;
+    background-color: #bfbfbf;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    margin-top: -252px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.edit-page-theme-setting-btn:hover, .edit-page-music-setting-btn:hover {
+    width: 120px;
+    -webkit-transition: width .3s ease-out;
+    -moz-transition: width .3s ease-out;
+    -ms-transition: width .3s ease-out;
+}
+
+.edit-page-theme-setting-geer, .edit-page-theme-setting-music {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    right: 13px;
+    top: 13px;
+    cursor: pointer;
+}
+
+.edit-page-theme-setting-btn:hover .edit-page-theme-setting-geer, .edit-page-music-setting-btn:hover .edit-page-theme-setting-music {
+    animation: spin .6s linear 1;
+    -webkit-animation: spin .6s linear 1;
+    -moz-animation: spin .6s linear 1;
+    -ms-animation: spin .6s linear 1;
+}
+
+.edit-page-theme-setting-word, .edit-page-theme-setting-music-word {
+    height: 14px;
+    opacity: 0;
+    position: absolute;
+    left: 13px;
+    top: 17px;
+    display: inline-block;
+}
+
+.edit-page-theme-setting-btn:hover .edit-page-theme-setting-word, .edit-page-music-setting-btn:hover .edit-page-theme-setting-music-word {
+    opacity: 1;
+    -webkit-transition: opacity .3s ease-out 0.3s;
+    -moz-transition: opacity .3s ease-out 1.3s;
+    -ms-transition: opacity .3s ease-out 1.3s;
+}
+
+.edit-page-music-setting-btn, .edit-page-music-setting-btn {
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    border-radius: 48px;
+    background-color: #bfbfbf;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    margin-top: -184px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/*添加新页面*/
+.edit-page-add-page-setting-page {
+    position: absolute;
+    width: 503px;
+    height: 650px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-add-page-bg.png") 0 0 no-repeat;
+    background-size: 503px 650px;
+    left: 373px;
+    top: 50%;
+    margin-top: -325px;
+}
+
+.close-add-page-setting-page-btn {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 29px;
+    right: 32px;
+    background-position: 0 -180px;
+}
+
+.close-add-page-setting-page-btn2 {
+    width: 50px;
+    height: 48px;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    cursor: pointer;
+}
+
+.edit-add-page-template-wall {
+    height: 460px;
+    position: absolute;
+    top: 100px;
+    left: 77px;
+    right: 10px;
+    overflow-y: auto;
+}
+
+.edit-add-page-template-wall::-webkit-scrollbar {
+    background-color: transparent;
+    width: 2px;
+}
+
+.edit-add-page-template-wall::-webkit-scrollbar-thumb {
+    background: darkgray;
+}
+
+.edit-page-add-page-setting-page .template-item-border {
+    width: 120px;
+    height: 228px;
+    float: left;
+    margin-right: 18px;
+    margin-top: 10px;
+}
+
+.not-webkit .edit-page-add-page-setting-page .template-item-border {
+    margin-right: 12px;
+}
+
+.edit-page-add-page-setting-page .template-thumbnail {
+    width: 116px;
+    height: 182px;
+    border: 2px solid white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.edit-page-add-page-setting-page .template-thumbnail.select {
+    border: 2px solid #0dd4ff;
+    border-radius: 2px;
+}
+
+.edit-page-add-page-setting-page .template-thumbnail .select-flag {
+    display: none;
+}
+
+.edit-page-add-page-setting-page .template-thumbnail.select .select-flag {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-position: -110px -50px;
+}
+
+.edit-page-add-page-setting-page .template-description {
+    color: #a7a7a7;
+    font-size: 12px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+}
+
+.edit-add-page-btn {
+    width: 392px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 4px;
+    color: #ffffff;
+    text-align: center;
+    background-color: #f34254;
+    position: absolute;
+    left: 82px;
+    bottom: 27px;
+}
+
+.edit-add-page-btn.tap {
+    background-color: #f27e8a;
+}
+
+/*下滑页面*/
+.edit-page-slide-page-border {
+    position: absolute;
+    width: 100px;
+    height: 652px;
+    left: 82px;
+    top: 50%;
+    margin-top: -327px;
+    overflow: hidden;
+    transition: 1.8s ease-out;
+    -webkit-transition: 1.8s ease-out;
+    -ms-transition: 1.8s ease-out;
+    -moz-transition: 1.8s ease-out;
+}
+
+.edit-page-slide-page-border.slide-out {
+    width: 840px;
+    -webkit-transition: .1s ease-out;
+    -ms-transition: .1s ease-out;
+    -moz-transition: .1s ease-out;
+}
+
+/*编辑图片*/
+.slide-page-edit-bgimg {
+    width: 542px;
+    height: 652px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-edit-bgimg-bg.png") 0 0 no-repeat;
+    background-size: 542px 652px;
+    position: absolute;
+    top: 0;
+    left: -265px;
+    opacity: 0;
+    transition: 1s ease-out;
+    -webkit-transition: .3s ease-out;
+    -ms-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+}
+
+.slide-page-edit-bgimg.slide-out {
+    left: 252px;
+    opacity: 1;
+    transition: left 0.8s ease-out;
+    -webkit-transition: left 0.3s ease-out;
+    -ms-transition: left 0.3s ease-out;
+    -moz-transition: left 0.3s ease-out;
+}
+
+.edit-bgimg-range {
+    position: absolute;
+    top: 414px;
+    left: 50%;
+    width: 220px;
+    height: 20px;
+    margin-left: -110px;
+}
+
+.slide-page-edit-bgimg .crop-img-border {
+    width: 256px;
+    height: 403px;
+    position: absolute;
+    top: 85px;
+    left: 163px;
+}
+
+.slide-edit-bgimg-updata-btn {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    background-position: -260px -70px;
+}
+
+.slide-edit-bgimg-updata-tips {
+    width: 52px;
+    height: 34px;
+    background-position: -250px -140px;
+    position: absolute;
+    top: -20px;
+    right: 4px;
+}
+
+.edit-page-slide-page-border .cropit-image-preview {
+    width: 256px;
+    height: 403px;
+    background-color: #eee;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    cursor: move;
+}
+
+.slide-edit-bgimg-save-btn {
+    width: 256px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 3px;
+    background-color: #f34254;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    left: 163px;
+    bottom: 48px;
+    cursor: pointer;
+}
+
+.slide-edit-bgimg-save-btn:hover {
+    opacity: 0.8;
+}
+
+.close-slide-page-edit-bgimg {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 29px;
+    right: 26px;
+    background-position: 0 -180px;
+    cursor: pointer;
+}
+
+/*编辑文字*/
+.slide-page-edit-word {
+    width: 542px;
+    height: 652px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-edit-word.png") 0 0 no-repeat;
+    background-size: 542px 652px;
+    position: absolute;
+    top: 0;
+    left: -265px;
+    opacity: 0;
+    transition: .3s ease-out;
+    -webkit-transition: .3s ease-out;
+    -ms-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+}
+
+.slide-page-edit-word.slide-out {
+    left: 252px;
+    opacity: 1;
+    transition: left .3s ease-out;
+    -webkit-transition: left .3s ease-out;
+    -ms-transition: left .3s ease-out;
+    -moz-transition: left .3s ease-out;
+}
+
+.slide-page-edit-word.slide-page.slide-out.pure-word .edit-word-mask {
+    position: absolute;
+    height: 346px;
+    z-index: 2;
+    top: 243px;
+    left: 68px;
+    right: 20px;
+    background: white url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-word-mask.png") repeat-y;
+    background-size: 427px auto;
+    display: block;
+}
+
+.slide-page-edit-word.slide-page.slide-out .edit-word-mask {
+    display: none;
+}
+
+.edit-word-text-border {
+    position: absolute;
+    top: 82px;
+    right: 33px;
+    width: 436px;
+    height: 158px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #fff;
+    border: solid 1px #b4b4b4;
+}
+
+.edit-word-text-border textarea {
+    position: absolute;
+    display: inline-block;
+    top: 11px;
+    left: 11px;
+    width: 414px;
+    height: 120px;
+    resize: none;
+    border: 0;
+    font-size: 14px;
+    color: #787878;
+}
+
+.edit-word-text-border textarea::-webkit-scrollbar {
+    background-color: #aaa;
+    width: 4px;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .2) inset;
+}
+
+.edit-word-text-border textarea::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #fff;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .5), inset -2px 2px 2px rgba(204, 204, 204, 0.1), inset 2px -2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.edit-text-word-count {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    color: #f7624a;
+    font-size: 12px;
+}
+
+/*.edit-word-color-border {*/
+/*width: 436px;*/
+/*height: 54px;*/
+/*border: 1px solid #cccccc;*/
+/*border-radius: 2px;*/
+/*position: absolute;*/
+/*top: 249px;*/
+/*right: 33px;*/
+/*padding: 11px 65px 11px 15px;*/
+/*box-sizing: border-box;*/
+/*overflow: hidden;*/
+/*transition: height 0.3s ease-out;*/
+/*-webkit-transition: height 0.3s ease-out;*/
+/*-ms-transition: height 0.3s ease-out;*/
+/*-moz-transition: height 0.3s ease-out;*/
+/*background: white;*/
+/*}*/
+
+/*.edit-word-color-border.show-more {*/
+/*z-index: 2;*/
+/*height: 163px;*/
+/*transition: height 0.3s ease-out;*/
+/*-webkit-transition: height 0.3s ease-out;*/
+/*-ms-transition: height 0.3s ease-out;*/
+/*-moz-transition: height 0.3s ease-out;*/
+/*}*/
+
+/*.edit-word-color-border .edit-color-box {*/
+/*width: 28px;*/
+/*height: 28px;*/
+/*border-radius: 2px;*/
+/*border: 2px solid transparent;*/
+/*display: inline-block;*/
+/*position: relative;*/
+/*float: left;*/
+/*margin: 0 3px 5px 0;*/
+/*cursor: pointer;*/
+/*}*/
+
+/*.edit-word-color-border .edit-color-box.select {*/
+/*border: 2px solid #0dd4ff;*/
+/*}*/
+
+/*.edit-word-color-border .edit-color-item {*/
+/*position: absolute;*/
+/*top: 2px;*/
+/*left: 2px;*/
+/*right: 2px;*/
+/*bottom: 2px;*/
+/*box-shadow: -1px 1px 3px #aaa inset;*/
+/*}*/
+
+/*.edit-word-show-more-color-btn {*/
+/*width: 24px;*/
+/*height: 24px;*/
+/*background-position: -40px -180px;*/
+/*position: absolute;*/
+/*top: 15px;*/
+/*right: 15px;*/
+/*cursor: pointer;*/
+/*transition: 0.2s ease-out;*/
+/*-webkit-transition: 0.2s ease-out;*/
+/*-ms-transition: 0.2s ease-out;*/
+/*-moz-transition: 0.2s ease-out;*/
+/*}*/
+
+/*.edit-word-show-more-color-btn.show-more {*/
+/*-webkit-transform: rotateZ(180deg);*/
+/*transition: 0.2s ease-out;*/
+/*-webkit-transition: 0.2s ease-out;*/
+/*-ms-transition: 0.2s ease-out;*/
+/*-moz-transition: 0.2s ease-out;*/
+/*}*/
+
+/*.edit-font-family-border {*/
+/*width: 436px;*/
+/*height: 88px;*/
+/*border: 1px solid #cccccc;*/
+/*border-radius: 2px;*/
+/*position: absolute;*/
+/*top: 343px;*/
+/*right: 33px;*/
+/*padding: 16px 65px 11px 15px;*/
+/*box-sizing: border-box;*/
+/*overflow: hidden;*/
+/*background-color: white;*/
+/*transition: height 0.3s ease-out;*/
+/*-webkit-transition: height 0.3s ease-out;*/
+/*-ms-transition: height 0.3s ease-out;*/
+/*-moz-transition: height 0.3s ease-out;*/
+/*}*/
+
+/*.edit-font-family-border.show-more {*/
+/*overflow-y: auto;*/
+/*z-index: 2;*/
+/*height: 308px;*/
+/*transition: height 0.3s ease-out;*/
+/*-webkit-transition: height 0.3s ease-out;*/
+/*-ms-transition: height 0.3s ease-out;*/
+/*-moz-transition: height 0.3s ease-out;*/
+/*}*/
+
+/*.edit-font-family-border.show-more::-webkit-scrollbar {*/
+/*background-color: #fff;*/
+/*width: 4px;*/
+/*-webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .2) inset;*/
+/*}*/
+
+/*.edit-font-family-border.show-more::-webkit-scrollbar-thumb {*/
+/*border-radius: 5px;*/
+/*background: #aaa;*/
+/*}*/
+
+/*.edit-font-family-item {*/
+/*width: 72px;*/
+/*height: 52px;*/
+/*overflow: hidden;*/
+/*float: left;*/
+/*margin-bottom: 6px;*/
+/*cursor: pointer;*/
+/*}*/
+
+/*.edit-word-show-more-font-family-btn {*/
+/*width: 24px;*/
+/*height: 24px;*/
+/*background-position: -40px -180px;*/
+/*position: absolute;*/
+/*top: 32px;*/
+/*right: 15px;*/
+/*cursor: pointer;*/
+/*transition: 0.2s ease-out;*/
+/*-webkit-transition: 0.2s ease-out;*/
+/*-ms-transition: 0.2s ease-out;*/
+/*-moz-transition: 0.2s ease-out;*/
+/*}*/
+
+/*.edit-word-show-more-font-family-btn.show-more {*/
+/*-webkit-transform: rotateZ(180deg);*/
+/*transition: 0.2s ease-out;*/
+/*-webkit-transition: 0.2s ease-out;*/
+/*-ms-transition: 0.2s ease-out;*/
+/*-moz-transition: 0.2s ease-out;*/
+/*}*/
+
+/*.edit-word-font-family-vernier {*/
+/*width: 72px;*/
+/*height: 52px;*/
+/*border: 2px solid #0dd4ff;*/
+/*border-radius: 3px;*/
+/*position: absolute;*/
+/*left: 15px;*/
+/*top: 16px;*/
+/*transition: 0.2s cubic-bezier(.17, .67, .6, 1.26);*/
+/*-webkit-transition: 0.2s cubic-bezier(.17, .67, .6, 1.26);*/
+/*-ms-transition: 0.2s cubic-bezier(.17, .67, .6, 1.26);*/
+/*-moz-transition: 0.2s cubic-bezier(.17, .67, .6, 1.26);*/
+/*}*/
+
+/*.edit-page-word-animation {*/
+/*width: 436px;*/
+/*height: 88px;*/
+/*border: 1px solid #cccccc;*/
+/*border-radius: 2px;*/
+/*position: absolute;*/
+/*bottom: 87px;*/
+/*right: 33px;*/
+/*overflow: hidden;*/
+/*padding: 16px 65px 11px 15px;*/
+/*box-sizing: border-box;*/
+/*background: #ffffff;*/
+/*transition: height 0.3s ease-out;*/
+/*-webkit-transition: height 0.3s ease-out;*/
+/*-ms-transition: height 0.3s ease-out;*/
+/*-moz-transition: height 0.3s ease-out;*/
+/*}*/
+
+/*.edit-page-word-animation.show-more {*/
+/*height: 438px;*/
+/*z-index: 2;*/
+/*transition: height 0.3s ease-out;*/
+/*-webkit-transition: height 0.3s ease-out;*/
+/*-ms-transition: height 0.3s ease-out;*/
+/*-moz-transition: height 0.3s ease-out;*/
+/*}*/
+
+/*.edit-word-show-more-font-animation-btn {*/
+/*width: 24px;*/
+/*height: 24px;*/
+/*background-position: -40px -180px;*/
+/*position: absolute;*/
+/*bottom: 32px;*/
+/*right: 15px;*/
+/*cursor: pointer;*/
+/*transform: rotateZ(180deg);*/
+/*-webkit-transform: rotateZ(180deg);*/
+/*-ms-transform: rotateZ(180deg);*/
+/*-moz-transform: rotateZ(180deg);*/
+/*transition: 0.2s ease-out;*/
+/*-webkit-transition: 0.2s ease-out;*/
+/*-ms-transition: 0.2s ease-out;*/
+/*-moz-transition: 0.2s ease-out;*/
+/*}*/
+
+/*.edit-word-show-more-font-animation-btn.show-more {*/
+/*transform: rotateZ(0deg);*/
+/*-webkit-transform: rotateZ(0deg);*/
+/*-ms-transform: rotateZ(0deg);*/
+/*-moz-transform: rotateZ(0deg);*/
+/*transition: 0.2s ease-out;*/
+/*-webkit-transition: 0.2s ease-out;*/
+/*-ms-transition: 0.2s ease-out;*/
+/*-moz-transition: 0.2s ease-out;*/
+/*}*/
+
+/*.edit-word-word-animation {*/
+/*width: 72px;*/
+/*height: 52px;*/
+/*line-height: 52px;*/
+/*float: left;*/
+/*margin-bottom: 6px;*/
+/*cursor: pointer;*/
+/*font-size: 14px;*/
+/*color: #787878;*/
+/*text-align: center;*/
+/*}*/
+
+/*.edit-word-font-animation-vernier {*/
+/*width: 72px;*/
+/*height: 52px;*/
+/*border: 2px solid #0dd4ff;*/
+/*border-radius: 3px;*/
+/*position: absolute;*/
+/*left: 15px;*/
+/*top: 16px;*/
+/*transition: 0.2s cubic-bezier(.17, .67, .6, 1.26);*/
+/*-webkit-transition: 0.2s cubic-bezier(.17, .67, .6, 1.26);*/
+/*-ms-transition: 0.2s cubic-bezier(.17, .67, .6, 1.26);*/
+/*-moz-transition: 0.2s cubic-bezier(.17, .67, .6, 1.26);*/
+/*}*/
+
+.close-edit-word-page-btn {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 29px;
+    right: 26px;
+    background-position: 0 -180px;
+    cursor: pointer;
+}
+
+.edit-page-edit-word-btn {
+    cursor: pointer;
+    width: 132px;
+    height: 48px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fefefe;
+    -webkit-box-shadow: 0 1px 3px rgba(203, 203, 203, .4);
+    -moz-box-shadow: 0 1px 3px rgba(203, 203, 203, .4);
+    box-shadow: 0 1px 3px rgba(203, 203, 203, .4);
+    border: solid 1px #b5b5b5;
+    background-image: -webkit-linear-gradient(bottom, #eee, #fff);
+    background-image: -moz-linear-gradient(bottom, #eee, #fff);
+    background-image: -o-linear-gradient(bottom, #eee, #fff);
+    background-image: -ms-linear-gradient(bottom, #eee, #fff);
+    background-image: linear-gradient(to top, #eee, #fff);
+    position: absolute;
+    top: 280px;
+}
+
+.edit-page-edit-word-btn.select {
+    background: white none;
+}
+
+.edit-page-edit-word-vernier {
+    width: 24px;
+    height: 24px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") no-repeat -40px -180px;
+    background-size: 600px auto;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -12px;
+    -webkit-transition: 0.3s ease-out;
+}
+
+.select .edit-page-edit-word-vernier {
+    -webkit-transform: rotateZ(180deg);
+}
+
+.edit-page-edit-word-btn.select-color {
+    left: 72px;
+}
+
+.edit-page-selected-color {
+    width: 24px;
+    height: 24px;
+    background-color: #ed1c24;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    margin-top: -12px;
+    left: 30px;
+}
+
+.edit-page-edit-word-select-color-tray {
+    position: absolute;
+    left: 70px;
+    top: 327px;
+    width: 442px;
+    height: 216px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-select-color-tray.png") no-repeat;
+    background-size: 442px auto;
+    padding: 35px 15px 15px 15px;
+    box-sizing: border-box;
+}
+
+.edit-page-edit-word-btn.select-font-family {
+    left: 224px;
+}
+
+.edit-page-edit-word-select-family-tray {
+    position: absolute;
+    left: 70px;
+    top: 327px;
+    width: 442px;
+    height: 216px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-select-family-tray.png") no-repeat;
+    background-size: 442px auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.edit-page-edit-word-select-family-tray .border, .edit-page-edit-word-select-animation-tray .border {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    overflow-y: auto;
+}
+
+.edit-page-edit-word-select-family-tray .border::-webkit-scrollbar, .edit-page-edit-word-select-animation-tray .border::-webkit-scrollbar {
+    background-color: #fff;
+    width: 4px;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .2) inset;
+}
+
+.edit-page-edit-word-select-family-tray .border::-webkit-scrollbar-thumb, .edit-page-edit-word-select-animation-tray .border::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #aaa;
+}
+
+.edit-page-edit-word-btn.select-font-animation {
+    left: 375px;
+}
+
+.edit-page-edit-word-btn img, .edit-page-edit-word-btn .selected-animation {
+    height: 48px;
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    left: 20px;
+}
+
+.edit-page-edit-word-btn .selected-animation {
+    line-height: 48px;
+    text-align: center;
+    font-size: 14px;
+    color: #787878;
+    width: 66px;
+}
+
+.edit-page-edit-word-select-animation-tray {
+    position: absolute;
+    left: 69px;
+    top: 327px;
+    width: 442px;
+    height: 216px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-select-animation-tray.png") no-repeat;
+    background-size: 442px auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.slide-page-edit-word .edit-word-save-btn {
+    width: 438px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: white;
+    background-color: #f34254;
+    font-size: 14px;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 32px;
+    left: 72px;
+    cursor: pointer;
+}
+
+.slide-page-edit-word .edit-word-save-btn:hover {
+    background-color: #f27481;
+}
+
+.edit-page-edit-word-select-color-tray .edit-color-box {
+    width: 28px;
+    height: 28px;
+    border-radius: 2px;
+    border: 2px solid transparent;
+    display: inline-block;
+    position: relative;
+    float: left;
+    margin: 0 4px 7px 0;
+    cursor: pointer;
+}
+
+.edit-page-edit-word-select-color-tray .edit-color-box.select {
+    border: 2px solid #0dd4ff;
+}
+
+.edit-page-edit-word-select-color-tray .edit-color-item {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    box-shadow: -1px 1px 3px #aaa inset;
+}
+
+.edit-font-family-item, .edit-word-word-animation {
+    width: 68px;
+    height: 48px;
+    overflow: hidden;
+    float: left;
+    margin-bottom: 6px;
+    cursor: pointer;
+    margin-right: 7px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    margin-left: 7px;
+}
+
+.edit-word-word-animation {
+    line-height: 44px;
+    text-align: center;
+    font-size: 14px;
+    color: #787878;
+}
+
+.edit-font-family-item.select, .edit-word-word-animation.select {
+    border: 2px solid #0dd4ff;
+}
+
+/*编辑地图*/
+.slide-page-edit-map {
+    width: 542px;
+    height: 652px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-edit-map.png") 0 0 no-repeat;
+    background-size: 542px 652px;
+    position: absolute;
+    top: 0;
+    left: -265px;
+    opacity: 0;
+    transition: 1s ease-out;
+    -webkit-transition: .3s ease-out;
+    -ms-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+}
+
+.slide-page-edit-map.slide-out {
+    left: 252px;
+    opacity: 1;
+    transition: left 0.8s ease-out;
+    -webkit-transition: left 0.3s ease-out;
+    -ms-transition: left 0.3s ease-out;
+    -moz-transition: left 0.3s ease-out;
+}
+
+.close-edit-map-page-btn {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 29px;
+    right: 26px;
+    background-position: 0 -180px;
+    cursor: pointer;
+}
+
+.edit-map-address {
+    width: 398px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+    color: #787878;
+    border-radius: 4px 0 0 4px;
+    position: absolute;
+    top: 60px;
+    left: 72px;
+    border: 1px solid #bfbfbf;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.edit-map-search-btn {
+    height: 34px;
+    width: 40px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") no-repeat 10px -352px;
+    background-size: 600px 600px;
+    position: absolute;
+    top: 60px;
+    left: 469px;
+    border: 1px solid #bfbfbf;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.edit-map-search-btn.tap {
+    background-color: #ec5e47;
+    background-position: 10px -392px;
+    border-color: #ec5e47;
+}
+
+#map {
+    width: 436px;
+    height: 458px;
+    position: absolute;
+    left: 72px;
+    top: 113px;
+    border: 1px solid #bfbfbf;
+    border-radius: 4px;
+}
+
+.anchorBL {
+    display: none !important;
+}
+
+.edit-map-save-btn {
+    width: 436px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    left: 72px;
+    border-radius: 4px;
+    bottom: 26px;
+    background: #f34254;
+    cursor: pointer;
+}
+
+.edit-map-save-btn:hover {
+    background: #f27481;
+}
+
+/*编辑视频*/
+.slide-page-edit-video {
+    width: 542px;
+    height: 652px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-edit-video.png") 0 0 no-repeat;
+    background-size: 542px 652px;
+    position: absolute;
+    top: 0;
+    left: -265px;
+    opacity: 0;
+    transition: 1s ease-out;
+    -webkit-transition: .3s ease-out;
+    -ms-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+}
+
+.slide-page-edit-video.slide-out {
+    left: 252px;
+    opacity: 1;
+    transition: left 0.8s ease-out;
+    -webkit-transition: left 0.3s ease-out;
+    -ms-transition: left 0.3s ease-out;
+    -moz-transition: left 0.3s ease-out;
+}
+
+.edit-video-text {
+    width: 436px;
+    height: 100px;
+    border: 1px solid #bfbfbf;
+    color: #787878;
+    border-radius: 4px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 72px;
+    top: 82px;
+    font-size: 12px;
+}
+
+.edit-video-tips {
+    width: 436px;
+    height: 20px;
+    line-height: 20px;
+    color: #a7a7a7;
+    font-size: 12px;
+    position: absolute;
+    left: 72px;
+    top: 197px;
+}
+
+.edit-video-video-web-href {
+    float: left;
+}
+
+.edit-video-video-web-href a {
+    color: #ec5e47;
+    text-decoration: underline;
+}
+
+.edit-video-tips-btn {
+    color: #ec5e47;
+    text-decoration: underline;
+    float: right;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.edit-video-tips-btn span {
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") no-repeat -100px -180px;
+    background-size: 600px 600px;
+    margin-left: 10px;
+    -webkit-transition: 0.3s linear;
+}
+
+.edit-video-tips-btn.show-more span {
+    -webkit-transform: rotateZ(180deg);
+    -webkit-transition: 0.2s ease-out;
+}
+
+.edit-video-detail-border {
+    width: 436px;
+    height: 270px;
+    position: absolute;
+    top: 275px;
+    left: 72px;
+    overflow: hidden;
+}
+
+.edit-video-detail {
+    width: 338px;
+    height: 267px;
+    position: absolute;
+    top: -270px;
+    left: 50px;
+    -webkit-transition: 0.2s linear;
+}
+
+.show-more .edit-video-detail {
+    top: 0;
+    -webkit-transition: 0.2s cubic-bezier(.17, .67, .67, 1.24);
+}
+
+.edit-video-detail .btn {
+    background: #ccc;
+    color: white;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+}
+
+.edit-video-detail .btn.select {
+    background: #019dff;
+}
+
+.edit-video-youku-btn {
+    width: 28px;
+    height: 68px;
+    top: 0;
+    padding: 13px 0 0 7px;
+}
+
+.edit-video-tudou-btn {
+    width: 28px;
+    height: 68px;
+    top: 72px;
+    padding: 13px 0 0 7px;
+}
+
+.edit-video-qq-btn {
+    width: 28px;
+    height: 88px;
+    top: 145px;
+    padding: 6px 0 0 7px;
+}
+
+.edit-video-detail-img {
+    width: 310px;
+    height: 267px;
+    position: absolute;
+    top: 0;
+    left: 28px;
+}
+
+.edit-video-save-btn {
+    width: 436px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    left: 72px;
+    border-radius: 4px;
+    bottom: 27px;
+    background: #f34254;
+    cursor: pointer;
+}
+
+.edit-video-save-btn:hover {
+    background: #f27481;
+}
+
+.close-edit-video-page-btn {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 29px;
+    right: 26px;
+    background-position: 0 -180px;
+    cursor: pointer;
+}
+
+/*编辑链接*/
+.slide-page-edit-anchor {
+    width: 542px;
+    height: 652px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-edit-anchor.png") 0 0 no-repeat;
+    background-size: 542px 652px;
+    position: absolute;
+    top: 0;
+    left: -265px;
+    opacity: 0;
+    transition: 1s ease-out;
+    -webkit-transition: .3s ease-out;
+    -ms-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+}
+
+.slide-page-edit-anchor.slide-out {
+    left: 252px;
+    opacity: 1;
+    transition: left 0.8s ease-out;
+    -webkit-transition: left 0.3s ease-out;
+    -ms-transition: left 0.3s ease-out;
+    -moz-transition: left 0.3s ease-out;
+}
+
+.edit-anchor-text {
+    width: 436px;
+    height: 120px;
+    border: 1px solid #bfbfbf;
+    color: #787878;
+    border-radius: 4px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 72px;
+    top: 82px;
+    font-size: 12px;
+}
+
+.edit-anchor-position {
+    background: #e1e1e1;
+    -webkit-color: #f00;
+    background: -moz-linear-gradient(top, #fff, #efefef);
+    background: -webkit-gradient(linear, 0 50%, 100% 50%, from(#fff), to(#efefef));
+    background: -webkit-linear-gradient(top, #fff, #efefef);
+    background: -o-linear-gradient(top, #fff, #efefef);
+    width: 108px;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 14px;
+    font-size: 14px;
+    color: #626262;
+    border-radius: 3px;
+    cursor: pointer;
+    position: absolute;
+    left: 135px;
+    top: 228px;
+}
+
+.edit-anchor-save-btn {
+    width: 436px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    left: 72px;
+    border-radius: 4px;
+    bottom: 26px;
+    background: #f34254;
+    cursor: pointer;
+}
+
+.edit-anchor-save-btn:hover {
+    background: #f27481;
+}
+
+.close-edit-anchor-page-btn {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 29px;
+    right: 26px;
+    background-position: 0 -180px;
+    cursor: pointer;
+}
+
+/*编辑多图*/
+.slide-page-edit-multi-img {
+    width: 542px;
+    height: 652px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-edit-multi-img.png") 0 0 no-repeat;
+    background-size: 542px 652px;
+    position: absolute;
+    top: 0;
+    left: -265px;
+    opacity: 0;
+    transition: 1s ease-out;
+    -webkit-transition: .3s ease-out;
+    -ms-transition: .3s ease-out;
+    -moz-transition: .3s ease-out;
+}
+
+.slide-page-edit-multi-img.slide-out {
+    left: 252px;
+    opacity: 1;
+    transition: left 0.8s ease-out;
+    -webkit-transition: left 0.3s ease-out;
+    -ms-transition: left 0.3s ease-out;
+    -moz-transition: left 0.3s ease-out;
+}
+
+.edit-multi-img-input-icon {
+    width: 88px;
+    position: absolute;
+    top: 90px;
+    left: 72px;
+    cursor: pointer;
+}
+
+.edit-multi-img-input-icon:hover {
+    opacity: 0.8;
+}
+
+.edit-multi-img-left {
+    width: 10px;
+    height: 18px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") -150px -530px no-repeat;
+    background-size: 600px auto;
+    position: absolute;
+    top: 165px;
+    left: 500px;
+    cursor: pointer;
+}
+
+.edit-multi-img-right {
+    width: 10px;
+    height: 18px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") -110px -530px no-repeat;
+    background-size: 600px auto;
+    position: absolute;
+    top: 135px;
+    left: 500px;
+    cursor: pointer;
+}
+
+.edit-multi-img-right:hover, .edit-multi-img-left:hover {
+    opacity: .8;
+}
+
+.edit-multi-img-item {
+    width: 94px;
+    height: 100%;
+    float: left;
+    margin-right: 14px;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+}
+
+.edit-multi-img-item.select {
+    background: #0DD3FF;
+}
+
+.edit-multi-img-item.loading {
+    pointer-events: none;
+}
+
+.edit-multi-img-item.loading .edit-multi-img-item-image-wrapper {
+    opacity: 0.5;
+}
+
+.loading .edit-multi-img-item-loading-icon {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -19px;
+    margin-left: -19px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") 0 -300px no-repeat;
+    background-size: 600px 600px;
+    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -ms-animation: spin 1s linear infinite;
+}
+
+.edit-multi-img-item-image-wrapper {
+    width: 88px;
+    height: 134px;
+    margin-top: 3px;
+    margin-left: 3px;
+    overflow: hidden;
+}
+
+.edit-multi-img-item img {
+    width: 100%;
+}
+
+.edit-multi-img-window {
+    height: 141px;
+    width: 310px;
+    overflow: hidden;
+    position: absolute;
+    top: 87px;
+    left: 177px;
+}
+
+.edit-multi-img-border {
+    height: 100%;
+    width: 1000px;
+    position: relative;
+    /*-webkit-transition: 0.3s ease-out;*/
+}
+
+.edit-multi-img-editor {
+    width: 192px;
+    height: 340px;
+    position: absolute;
+    top: 254px;
+    left: 200px;
+}
+
+.edit-page-slide-page-border .edit-multi-img-editor .cropit-image-preview {
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: move;
+    width: 192px;
+    height: 302px;
+}
+
+.edit-page-slide-page-border .edit-multi-img-editor .cropit-image-zoom-input {
+    position: absolute;
+    bottom: 19px;
+}
+
+.cropit-image-zoom-input {
+    width: 192px;
+    height: 4px;
+    background-image: -webkit-linear-gradient(bottom, #d7d7d7, #e6e6e6);
+    background-image: -moz-linear-gradient(bottom, #d7d7d7, #e6e6e6);
+    background-image: -o-linear-gradient(bottom, #d7d7d7, #e6e6e6);
+    background-image: linear-gradient(to top, #d7d7d7, #e6e6e6);
+    border: 1px solid #b9b9b9;
+    border-radius: 4px;
+    -webkit-appearance: none !important;
+}
+
+input.cropit-image-zoom-input::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc));
+    border: 1px solid #bebebe;
+    -webkit-box-shadow: 0 0 6px #aaa;
+    -webkit-border-radius: 15px;
+    -webkit-appearance: none !important;
+}
+
+.edit-multi-img-btn {
+    height: 39px;
+    line-height: 39px;
+    width: 192px;
+    border-radius: 4px;
+    background: #f34254;
+    color: white;
+    position: absolute;
+    top: 587px;
+    left: 203px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.edit-multi-img-btn:hover {
+    opacity: 0.8;
+}
+
+.edit-multi-img-item-count {
+    width: 24px;
+    height: 23px;
+    line-height: 24px;
+    text-align: center;
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    color: #333;
+    font-weight: bold;
+    font-size: 12px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") -150px -50px no-repeat;
+    background-size: 600px 600px;
+}
+
+.select .edit-multi-img-item-count {
+    background-position: -80px 0;
+    color: white;
+}
+
+.edit-multi-img-item-delete {
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") -110px -90px no-repeat;
+    background-size: 600px 600px;
+}
+
+.close-edit-multi-img-page-btn {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 29px;
+    right: 26px;
+    background-position: 0 -180px;
+    cursor: pointer;
+}
+
+.edit-multi-img-background-wrapper {
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: move;
+    width: 192px;
+    height: 302px;
+}
+
+.edit-multi-img-save-btn {
+    width: 192px;
+    background-color: #0ca1ff;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 272px;
+    z-index: 2;
+    opacity: 0;
+    -webkit-transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.can-save .edit-multi-img-save-btn {
+    opacity: 1;
+    -webkit-transition: 0.3s ease-out;
+}
+
+/*红色按钮在hover状态下背景色统一使用：#f27481*/
+
+/*编辑音乐*/
+.edit-music-page {
+    width: 444px;
+    height: 620px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-music-bg.png") no-repeat;
+    background-size: 444px 620px;
+    position: absolute;
+    top: 50%;
+    margin-top: -310px;
+    right: 15px;
+    z-index: 1;
+}
+
+.close-edit-music-page-hide-btn {
+    width: 49px;
+    height: 48px;
+    position: absolute;
+    top: 126px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.edit-music-switch-btn-border {
+    width: 308px;
+    height: 36px;
+    margin-top: 76px;
+    margin-left: 30px;
+}
+
+.edit-music-system-music-list-btn, .edit-music-user-music-list-btn {
+    float: left;
+    width: 151px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border: 1px solid #ec5e47;
+    background: white;
+    color: #ec5e47;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.edit-music-system-music-list-btn.select, .edit-music-user-music-list-btn.select {
+    background: #ec5e47;
+    color: #fff;
+}
+
+.edit-music-system-music-list, .edit-music-user-music-list {
+    width: 355px;
+    height: 400px;
+    position: absolute;
+    top: 129px;
+    left: 10px;
+    z-index: 1;
+    background: white;
+}
+
+.edit-music-system-music-list.select, .edit-music-user-music-list.select {
+    z-index: 2;
+}
+
+.edit-music-system-class {
+    width: 325px;
+    margin-left: 16px;
+    height: 88px;
+    overflow-y: auto;
+    position: relative;
+}
+
+.edit-music-system-class div.btn {
+    width: 66px;
+    height: 30px;
+    line-height: 32px;
+    text-align: center;
+    display: inline-block;
+    margin: 5px;
+    border: 1px dashed #787878;
+    background: #ffffff;
+    color: #787878;
+    font-size: 14px;
+    border-radius: 2px;
+    float: left;
+    cursor: pointer;
+}
+
+.edit-music-system-class div.btn.select {
+    border: 1px solid #787878;
+    color: white;
+    background: #787878;
+}
+
+.edit-music-system-class::-webkit-scrollbar {
+    background-color: #fff;
+    width: 4px;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .2) inset;
+}
+
+.edit-music-system-class::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #aaa;
+}
+
+.edit-music-system-music-list .music-list {
+    height: 305px;
+    /*overflow-y: auto;*/
+    margin-top: 5px;
+    position: relative;
+}
+
+.edit-music-system-music-list .music-list .inner-music-list {
+    height: 305px;
+    overflow-y: auto;
+}
+
+.edit-music-page .inner-music-list::-webkit-scrollbar {
+    background-color: #fff;
+    width: 4px;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .2) inset;
+}
+
+.edit-music-page .inner-music-list::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #aaa;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .5), inset -2px 2px 2px rgba(204, 204, 204, 0.1), inset 2px -2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.edit-music-page .music-list .item {
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #838383;
+    padding-left: 21px;
+    position: relative;
+}
+
+.edit-music-page .music-list .item.select {
+    color: #ec5e47;
+}
+
+.edit-music-page .music-list .item.select:before {
+    content: "";
+    display: inline-block;
+    width: 11px;
+    height: 10px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") -40px -215px no-repeat;
+    background-size: 600px auto;
+    position: absolute;
+    left: 5px;
+    top: 13px;
+}
+
+.edit-music-page .music-list .item .name {
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.edit-music-page .music-list .item .btn {
+    width: 18px;
+    height: 18px;
+    background-position: -35px -256px;
+    position: absolute;
+    top: 9px;
+    right: 12px;
+}
+
+.edit-music-user-music-list .item.loading .btn {
+    /* 上传音乐的时候显示删除按钮*/
+    background-position: -80px -180px;
+}
+
+.edit-music-page .music-list .item .btn.play {
+    background-position: -35px -236px;
+}
+
+.edit-music-user-music-list .music-list {
+    height: 350px;
+    overflow-y: auto;
+}
+
+.edit-music-user-music-list .music-list::-webkit-scrollbar {
+    background-color: #fff;
+    width: 4px;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .2) inset;
+}
+
+.edit-music-user-music-list .music-list::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #aaa;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, .5), inset -2px 2px 2px rgba(204, 204, 204, 0.1), inset 2px -2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.edit-music-page .edit-music-user-music-list .music-list .item.loading .name {
+    width: 151px;
+}
+
+.edit-music-user-music-list .item .sum-progress {
+    display: none;
+}
+
+.edit-music-user-music-list .item.loading .sum-progress {
+    height: 4px;
+    width: 128px;
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    background: #fcc3c9;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 1px;
+}
+
+.edit-music-user-music-list .sum-progress .already-progress {
+    height: 100%;
+    width: 0;
+    background: #fe7785;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.2s ease-out;
+    -webkit-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+}
+
+.edit-music-user-music-list .update-music {
+    height: 55px;
+    padding-left: 21px;
+    background-position: -80px -198px;
+    cursor: pointer;
+}
+
+.edit-music-user-music-list .loading .update-music {
+    display: none;
+}
+
+.close-edit-music-page {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 25px;
+    right: 85px;
+    background-position: 0 -180px;
+    cursor: pointer;
+}
+
+.edit-music-make-sure {
+    width: 308px;
+    height: 36px;
+    position: absolute;
+    border-radius: 4px;
+    line-height: 36px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    bottom: 30px;
+    left: 34px;
+    background: #f34254;
+    cursor: pointer;
+}
+
+/*配置页面*/
+.edit-setting-page {
+    width: 444px;
+    height: 620px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-setting-bg.png") no-repeat;
+    background-size: 444px 620px;
+    position: absolute;
+    top: 50%;
+    margin-top: -310px;
+    right: 15px;
+    z-index: 1;
+}
+
+.close-edit-setting-page-hide-btn {
+    width: 51px;
+    height: 48px;
+    position: absolute;
+    right: 10px;
+    top: 59px;
+    cursor: pointer;
+}
+
+.edit-setting-basic {
+    width: 318px;
+    height: 126px;
+    margin-top: 69px;
+    margin-left: 28px;
+}
+
+.edit-setting-page .crop-img-border {
+    width: 100px;
+    height: 100px;
+    background: #eee;
+    position: relative;
+    float: left;
+}
+
+.edit-setting-page .cropit-image-preview {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    cursor: move;
+}
+
+.edit-setting-page .cropit-image-preview img {
+    width: 100%;
+}
+
+.edit-setting-page .cropit-image-preview.cropit-image-loaded img {
+    display: none;
+}
+
+.edit-setting-page .cropit-image-preview.cropit-image-loaded {
+    cursor: move;
+}
+
+.edit-thumbnail-range {
+    width: 100px;
+    position: relative;
+    top: 103px;
+}
+
+input.edit-thumbnail-range {
+    width: 98px;
+    height: 4px;
+    background-image: -webkit-linear-gradient(bottom, #d7d7d7, #e6e6e6);
+    background-image: -moz-linear-gradient(bottom, #d7d7d7, #e6e6e6);
+    background-image: -o-linear-gradient(bottom, #d7d7d7, #e6e6e6);
+    background-image: linear-gradient(to top, #d7d7d7, #e6e6e6);
+    border: 1px solid #b9b9b9;
+    border-radius: 4px;
+    -webkit-appearance: none !important;
+}
+
+input.edit-thumbnail-range::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    background: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(#fff),
+            to(#ccc)
+    );
+    border: 1px solid #bebebe;
+    -webkit-box-shadow: 0 0 6px #aaa;
+    -webkit-border-radius: 15px;
+    -webkit-appearance: none !important;
+}
+
+.virtual-input-file-btn {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    background-position: 0 -250px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 3;
+}
+
+.edit-setting-title {
+    width: 198px;
+    height: 94px;
+    border: 1px solid #a7a7a7;
+    border-radius: 4px;
+    float: right;
+    position: relative;
+}
+
+.edit-setting-title textarea {
+    width: 175px;
+    height: 60px;
+    margin: 12px 0 0 12px;
+    font-size: 12px;
+    color: #787878;
+    border: 0;
+}
+
+.edit-setting-page .edit-setting-title .count {
+    font-size: 12px;
+    color: #f7624a;
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+}
+
+.edit-setting-page .edit-description {
+    width: 100%;
+    height: 86px;
+    border: 1px solid #a7a7a7;
+    border-radius: 4px;
+    float: left;
+    position: relative;
+    margin-top: 34px;
+}
+
+.edit-setting-page .edit-description textarea {
+    border: 0;
+    width: 292px;
+    height: 50px;
+    margin: 12px 0 0 12px;
+    font-size: 12px;
+    color: #787878;
+}
+
+.edit-setting-page .edit-description .count {
+    font-size: 12px;
+    color: #f7624a;
+    position: absolute;
+    right: 12px;
+    bottom: 6px;
+}
+
+.edit-setting-page .more {
+    font-size: 12px;
+    color: #787878;
+    margin-left: 40px;
+    margin-top: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.edit-setting-page .triangle {
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background-position: -100px -180px;
+    position: relative;
+    top: -1px;
+    left: 12px;
+    transition: 0.2s ease-out;
+    -webkit-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+}
+
+.edit-setting-page .triangle.show-more {
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+    -moz-transform: rotateZ(180deg);
+    -ms-transform: rotateZ(180deg);
+    transition: 0.2s ease-out;
+    -webkit-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+}
+
+.edit-setting-more-option-border {
+    width: 318px;
+    height: 0;
+    margin-left: 28px;
+    overflow: hidden;
+    transition: 0.2s ease-out;
+    -webkit-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-setting-more-info.png") 14px 30px no-repeat;
+    background-size: 279px 247px;
+}
+
+.edit-setting-more-option-border.show-more {
+    height: 300px;
+    transition: 0.2s ease-out;
+    -webkit-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+}
+
+.edit-setting-more-option-border select {
+    background: #e1e1e1;
+    -webkit-color: #f00;
+    background: -moz-linear-gradient(top, #fff, #efefef);
+    background: -webkit-gradient(linear, 0 50%, 100% 50%, from(#fff), to(#efefef));
+    background: -webkit-linear-gradient(top, #fff, #efefef);
+    background: -o-linear-gradient(top, #fff, #efefef);
+    width: 98px;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 14px;
+    font-size: 14px;
+    color: #787878;
+    border-radius: 3px;
+    cursor: pointer;
+    border-color: #b5b5b5;
+}
+
+.page-turning-gesture {
+    margin-top: 18px;
+    margin-left: 83px;
+}
+
+.page-turning-animation {
+    margin-top: 19px;
+    margin-left: 83px;
+}
+
+.edit-setting-more-option-border select.page-turning-signature {
+    margin-top: 18px;
+    margin-left: 83px;
+    width: 227px;
+}
+
+.shut-down-remen {
+    position: absolute;
+    top: 361px;
+    left: 120px;
+}
+
+.pay-explain-link {
+    position: absolute;
+    top: 383px;
+    left: 120px;
+    cursor: pointer;
+}
+
+.edit-setting-make-sure {
+    width: 320px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color: white;
+    background-color: #f34254;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 28px;
+    margin-top: 22px;
+}
+
+.edit-setting-switch-publicity {
+    height: 20px;
+    width: 50px;
+    position: relative;
+    margin-top: 34px;
+    margin-left: 73px;
+    cursor: pointer;
+}
+
+.edit-setting-switch-shade {
+    width: 100%;
+    height: 16px;
+    border: 1px solid #ec5e47;
+    background-color: #ec5e47;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 1px;
+}
+
+.close .edit-setting-switch-shade {
+    border: 1px solid #b6b6b6;
+    background-color: #fff;
+}
+
+.edit-setting-switch-btn {
+    height: 20px;
+    width: 20px;
+    border-radius: 19px;
+    border: 1px solid #ec5e47;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    z-index: 20;
+    background: white;
+}
+
+.close .edit-setting-switch-btn {
+    border: 1px solid #b6b6b6;
+    right: 31px;
+}
+
+.edit-setting-switch-recommend {
+    height: 20px;
+    width: 50px;
+    position: relative;
+    margin-top: 23px;
+    margin-left: 73px;
+    cursor: pointer;
+}
+
+.edit-setting-switch-hot {
+    height: 20px;
+    width: 50px;
+    position: relative;
+    margin-top: 13px;
+    margin-left: 227px;
+    cursor: pointer;
+}
+
+.close-edit-setting-page {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 25px;
+    right: 85px;
+    background-position: 0 -180px;
+    cursor: pointer;
+}
+
+/*预览页面*/
+.preview-page {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background: white;
+    min-width: 1024px;
+    overflow: auto;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    -webkit-transition: 0.5s linear;
+    transition: 0.5s linear;
+}
+
+.preview-page.show {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: 0.5s linear;
+    transition: 0.5s linear;
+}
+
+.preview-page-phone {
+    height: 672px;
+    width: 368px;
+    position: absolute;
+    top: 50%;
+    margin-top: -336px;
+    right: 50%;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/preview-page-phone.png");
+}
+
+.preview-page-title {
+    width: 320px;
+    height: 32px;
+    position: absolute;
+    top: 57px;
+    left: 50%;
+    margin-left: -162px;
+    color: white;
+    text-align: center;
+    background-color: #1b1c20;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.preview-page-frame-border {
+    width: 320px;
+    height: 504px;
+    position: absolute;
+    top: 89px;
+    left: 50%;
+    margin-left: -162px;
+    background: darkgray;
+}
+
+.preview-page-pre-page {
+    position: absolute;
+    top: 50%;
+    margin-top: 40px;
+    left: 50%;
+    margin-left: -21px;
+    width: 43px;
+    height: 99px;
+    background-position: -1px -50px;
+    cursor: pointer;
+}
+
+.preview-page-next-page {
+    position: absolute;
+    top: 50%;
+    margin-top: 150px;
+    left: 50%;
+    margin-left: -21px;
+    width: 43px;
+    height: 99px;
+    background-position: -50px -50px;
+    cursor: pointer;
+}
+
+.preview-page-back-btn {
+    width: 224px;
+    height: 40px;
+    line-height: 40px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    background-color: #f34254;
+    border-radius: 4px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    margin-top: 250px;
+    left: 64%;
+}
+
+.preview-page-back-btn:hover {
+    background-color: #f27481;
+}
+
+.preview-page-qr-code-border {
+    width: 170px;
+    height: 190px;
+    position: absolute;
+    left: 64%;
+    top: 50%;
+    margin-left: 27px;
+    margin-top: -80px;
+}
+
+.preview-page-qr-code-title {
+    height: 20px;
+    background-position: -107px -280px;
+}
+
+.preview-page-qr-code-border img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/*分享*/
+.bdshare-slide-button-box {
+    display: none !important;
+}
+
+.bdshare_popup_box .bdshare_popup_bottom {
+    display: none !important;
+}
+
+.preview-page-share-btn-border {
+    position: absolute;
+    top: 50%;
+    left: 64%;
+    margin-top: 120px;
+}
+
+.bdshare_popup_bg {
+    display: none !important;
+}
+
+div.bdsharebuttonbox a.fp-share-icon {
+    width: 32px;
+    height: 32px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/icons.png") no-repeat;
+    background-size: 200px 200px;
+    padding-left: 0;
+    margin: 6px 15px 6px 0 !important;
+    float: left;
+}
+
+div.bdsharebuttonbox a.fp-share-icon.fp_tsina {
+    background-position: 0 0;
+}
+
+div.bdsharebuttonbox a.fp-share-icon.fp_qzone {
+    background-position: -40px 0;
+}
+
+div.bdsharebuttonbox a.fp-share-icon.fp_douban {
+    background-position: -80px 0;
+}
+
+div.bdsharebuttonbox a.fp-share-icon.fp_renren {
+    background-position: -120px 0;
+}
+
+div.bdsharebuttonbox a.fp-share-icon.fp_more {
+    background-position: 0 -50px;
+}
+
+.bdshare_popup_box {
+    left: 50% !important;
+    top: 50% !important;
+    margin-top: -201px;
+    margin-left: 146px;
+    width: 308px !important;
+    height: 357px !important;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/share-btn-border.png") 0 0 no-repeat !important;
+    background-size: 308px 357px !important;
+    border: none !important;
+}
+
+.bdshare_popup_box .bdshare_popup_top {
+    display: none !important;
+}
+
+.bdshare_popup_box .bdshare_popup_list {
+    margin-top: 55px;
+    margin-left: 16px;
+    background: transparent !important;
+}
+
+.bdshare_popup_box .bdshare_popup_list li {
+    width: 121px;
+}
+
+.bdshare_dialog_bottom {
+    display: none;
+}
+
+/*分享信息*/
+.preview-page-share-info {
+    width: 260px;
+    height: 134px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/share-info-bg.png") no-repeat;
+    background-size: 260px auto;
+    position: absolute;
+    left: 64%;
+    bottom: 50%;
+    margin-bottom: 120px;
+    margin-left: -7px;
+}
+
+.preview-page-share-title {
+    line-height: 20px;
+    height: 41px;
+    width: 254px;
+    font-size: 14px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 17px;
+    margin-top: 12px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.preview-page-share-thumbnail-border {
+    width: 60px;
+    height: 60px;
+    float: left;
+    overflow: hidden;
+    margin-left: 17px;
+    margin-top: 6px;
+}
+
+.preview-page-share-thumbnail-border img {
+    height: 100%;
+}
+
+.preview-page-descrption {
+    font-size: 12px;
+    color: #808080;
+    float: left;
+    margin-top: 6px;
+    width: 145px;
+    margin-left: 12px;
+}
+
+.edit-page-logo {
+    width: 152px;
+    height: 16px;
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    background-position: -110px -340px;
+}
+
+.edit-page-weixin-tip {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 25px;
+    bottom: 60px;
+    background-position: -200px -100px;
+    cursor: pointer;
+}
+
+.edit-page-weixin-tip-img {
+    position: absolute;
+    right: 65px;
+    bottom: 49px;
+}
+
+/*分享链接*/
+.preview-page-url-label {
+    position: absolute;
+    top: 50%;
+    left: 64%;
+    font-size: 12px;
+    color: #787878;
+    margin-top: 175px;
+    margin-left: 9px;
+}
+
+.preview-page-url-border {
+    width: 300px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    margin-top: 195px;
+    left: 64%;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    cursor: text;
+    background-color: #fff;
+}
+
+.preview-page-url-value {
+    padding: 0 15px;
+    font-size: 12px;
+    color: #333;
+    border: 1px solid #ccc;
+    height: 30px;
+    line-height: 30px;
+    width: 224px;
+    float: left;
+    box-sizing: border-box;
+    border-radius: 3px;
+    -webkit-user-select: text;
+    overflow: hidden;
+}
+
+.preview-page-copy-btn {
+    width: 58px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border: 1px dashed #a7a7a7;
+    color: #787878;
+    font-size: 12px;
+    float: right;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.preview-page-copy-btn.zeroclipboard-is-hover {
+    border-color: #333;
+    color: #333;
+}
+
+/*动画*/
+@-webkit-keyframes spin {
+    0% {
+        transform: rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg);
+        -ms-transform: rotateZ(0deg);
+        -moz-transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-360deg);
+        -webkit-transform: rotateZ(-360deg);
+        -ms-transform: rotateZ(-360deg);
+        -moz-transform: rotateZ(-360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg);
+        -webkit-transform: rotateZ(0deg);
+        -ms-transform: rotateZ(0deg);
+        -moz-transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(-360deg);
+        -webkit-transform: rotateZ(-360deg);
+        -ms-transform: rotateZ(-360deg);
+        -moz-transform: rotateZ(-360deg);
+    }
+}
+
+/*个人设置*/
+.man-setup-box {
+    position: absolute;
+    top: 42px;
+    right: -5px;
+    width: 130px;
+    z-index: 100;
+}
+
+.ma-user-avatars {
+    border: 0;
+    float: right;
+    width: 124px;
+    margin: 5px 30px 0 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.ma-user-name {
+    line-height: 40px;
+    float: right;
+    font-size: 14px;
+    margin: 10px 0 0 0;
+}
+
+.ma-avatars-border {
+    height: 28px;
+    width: 28px;
+    border-radius: 7px;
+    overflow: hidden;
+    float: right;
+    margin-top: 16px;
+    margin-right: 10px;
+}
+
+.ma-user-avatars img {
+    height: 100%;
+}
+
+.man-setting-btn {
+    margin-top: 20px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #2e353b;
+    color: white;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #858585;
+}
+
+.man-setting-btn:hover {
+    background-color: #61707d;
+}
+
+.man-change-password {
+    height: 40px;
+    line-height: 40px;
+    background-color: #2e353b;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid #858585;
+}
+
+.man-change-password:hover {
+    background-color: #61707d;
+}
+
+.man-change-password-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") -200px -60px no-repeat;
+    background-size: 600px auto;
+    float: left;
+    margin-top: 13px;
+    margin-left: 11px;
+    margin-right: 10px;
+}
+
+.man-setting-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/edit-page-icon.png") 0 -410px no-repeat;
+    background-size: 600px auto;
+    float: left;
+    margin-top: 13px;
+    margin-left: 11px;
+    margin-right: 10px;
+}
+
+.man-quit-btn {
+    height: 40px;
+    line-height: 40px;
+    background-color: #2e353b;
+    color: white;
+    text-align: center;
+    border-radius: 0 0 4px 4px;
+}
+
+.man-quit-btn:hover {
+    background-color: #61707d;
+}
+
+.man-quit-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url("//static01.cloud7.com.cn/assets/1c623e5b/content/image/m-icon.png") -100px -360px no-repeat;
+    background-size: 400px auto;
+    float: left;
+    margin-top: 13px;
+    margin-left: 11px;
+    margin-right: 10px;
+}
+
+.man-word {
+    float: left;
+    font-size: 12px;
+}
+
+.man-setup-box:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #2e353b;
+    position: absolute;
+    top: 0;
+    right: 12px;
+}
+
+#LELE_ShowDIV_UNIONtop {
+    display: none !important;
+}

@@ -10,11 +10,24 @@ namespace RoyaltyScanService
 {
     public class RoyaltyScanService
     {
+        public async Task<IList<SoftwareModel>> ScanAndUpload()
+        {
+            var url = ConfigurationManager.AppSettings["submitUrl"];
+
+            // 获取url，提交到服务器
+            if (string.IsNullOrEmpty(url))
+            {
+                throw new ArgumentException("url can't be empty.");
+            }
+
+            return await ScanAndUpload(url);
+        }
+
         /// <summary>
         ///  扫描本地所有软件，并且上传到服务器，得到由服务器返回的非法软件列表
         /// </summary>
         /// <returns></returns>
-        public async Task<IList<SoftwareModel>> ScanAndUpload()
+        public async Task<IList<SoftwareModel>> ScanAndUpload(string url)
         {
             //获取临时目录路径
             string temp = System.Environment.GetEnvironmentVariable("TEMP");
@@ -39,18 +52,13 @@ namespace RoyaltyScanService
                 Softwares = softwares
             };
 
-            // 获取url，提交到服务器
-            var url = ConfigurationManager.AppSettings["submitUrl"];
-            if (string.IsNullOrEmpty(url))
-            {
-                throw new ArgumentException("url can't be empty.");
-            }
-
             var httpClient = new HttpClient();
             var content = new StringContent(Newtonsoft.Json.JsonConvert.SerializeObject(submitSoftwaresView));
+            content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
             var response = await httpClient.PostAsync(url, content);
 
-            var illegalSoftwares = Newtonsoft.Json.JsonConvert.DeserializeObject<SubmitSoftwaresView>(await response.Content.ReadAsStringAsync());
+            var requestContent = await response.Content.ReadAsStringAsync();
+            var illegalSoftwares = Newtonsoft.Json.JsonConvert.DeserializeObject<SubmitSoftwaresView>(requestContent);
             return illegalSoftwares.Softwares;
         }
 

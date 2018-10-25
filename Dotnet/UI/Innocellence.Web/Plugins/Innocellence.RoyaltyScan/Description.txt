@@ -1,0 +1,12 @@
+Group: Discount requirements
+FriendlyName: Wechat RoyaltyScan
+SystemName: Innocellence.RoyaltyScan
+Version: 1.0.20181025.1
+SupportedVersions: 1.00
+Author: jie.tian
+DisplayOrder: 1
+FileName: Innocellence.RoyaltyScan.dll
+Controllers: Innocellence.RoyaltyScan.Controllers
+Dependences: 
+Install: 1
+InstallFrom: 
