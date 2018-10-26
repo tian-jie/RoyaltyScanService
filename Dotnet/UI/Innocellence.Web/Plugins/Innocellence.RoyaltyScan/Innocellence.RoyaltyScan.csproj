@@ -245,6 +245,7 @@
     <Content Include="Views\Shared\_ScreenLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\Innocellence.Activity.pubxml" />
     <Content Include="Views\Shared\_AnnualLayout.cshtml" />
   </ItemGroup>
